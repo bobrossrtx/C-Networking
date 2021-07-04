@@ -9,7 +9,7 @@ enum class CustomMsgTypes : uint32_t
 
 int main()
 {
-	net::message<CustomMsgTypes> msg;
+	net::msg::message<CustomMsgTypes> msg;
 	msg.header.id = CustomMsgTypes::FireBullet;
 
 	int a = 1;
