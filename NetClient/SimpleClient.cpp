@@ -7,8 +7,24 @@ enum class CustomMsgTypes : uint32_t
 	MovePlayer
 };
 
+//class CustomClient : public net::client::ClientInterface<CustomMsgTypes>
+//{
+//public:
+//	bool FireBullet(float x, float y)
+//	{
+//		net::msg::message<CustomMsgTypes> msg;
+//		msg.header.id = CustomMsgTypes::FireBullet;
+//		msg << x << y;
+//		Send(msg);
+//	}
+//};
+
 int main()
 {
+	/*CustomClient c;
+	c.Connect("Community.onelonecoder.com", 60000);
+	c.FireBullet(2.0f, 5.0f);*/
+	
 	net::msg::message<CustomMsgTypes> msg;
 	msg.header.id = CustomMsgTypes::FireBullet;
 
