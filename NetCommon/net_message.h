@@ -79,5 +79,23 @@ namespace net
 				return msg;
 			}
 		};
+
+		// Forward declare the connection
+		template<typename T>
+		class Connection;
+
+		template<typename T>
+		struct owned_message
+		{
+			std::shared_ptr<Connection<T>> remote = nullptr
+			message<T> msg;
+
+			// Again, a friendly string maker
+			friend std::ostream& operator << (std::ostream& os, const owned_message<T>& msg)
+			{
+				os << msg.msg;
+				return os;
+			}
+		};
 	}
 }
